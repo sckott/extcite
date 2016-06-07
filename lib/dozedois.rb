@@ -3,6 +3,7 @@ require 'serrano'
 require 'pdf-reader'
 require "dozedois/utils"
 require "dozedois/methods_array"
+require "dozedois/methods_string"
 require "dozedois/version"
 
 module Dozedois
@@ -29,7 +30,7 @@ module Dozedois
   def self.doze(path:, file: "out.bib", output: "bib")
     res = Dozedois.get_dois(path: path)
     bibs = Dozedois.cont_neg(ids: res)
-    out.write_bib(bibs)
+    bibs.write_bib(file)
     puts "bib data written to " + file
   end
 

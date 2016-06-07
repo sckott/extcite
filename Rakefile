@@ -10,7 +10,7 @@ end
 desc "Run tests"
 task :default => :test
 
-desc "Build textminer docs"
+desc "Build dozedois docs"
 task :docs do
 	system "yardoc"
 end
@@ -25,17 +25,17 @@ task :clean do
   system "ls | grep [0-9].gem | xargs rm"
 end
 
-desc "Build textminer"
+desc "Build dozedois"
 task :build do
-	system "gem build textminer.gemspec"
+	system "gem build dozedois.gemspec"
 end
 
-desc "Install textminer"
+desc "Install dozedois"
 task :install => [:bundle, :build] do
-	system "gem install textminer-#{Textminer::VERSION}.gem"
+	system "gem install dozedois-#{Dozedois::VERSION}.gem"
 end
 
 desc "Release to Rubygems"
 task :release => :build do
-  system "gem push textminer-#{Textminer::VERSION}.gem"
+  system "gem push dozedois-#{Dozedois::VERSION}.gem"
 end

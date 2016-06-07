@@ -5,7 +5,7 @@ require 'dozedois/version'
 
 Gem::Specification.new do |s|
   s.name        = 'dozedois'
-  s.version     = dozedois::VERSION
+  s.version     = Dozedois::VERSION
   s.date        = '2016-06-07'
   s.summary     = "Gets DOIS and generates citations for your papers"
   s.description = "Gets DOIS and generates citations for your papers"

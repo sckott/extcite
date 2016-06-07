@@ -2,21 +2,19 @@
 
 require "thor"
 
-class Tm < Thor
+class Dz < Thor
   include Thor::Actions
-  require 'textminer'
+  require 'dozedois'
   require 'launchy'
-  require 'json'
   require 'pp'
 
-  desc "links STRING", "Get links meant for text mining"
-  # method_option :doi => :string
-  def links(tt)
+  desc "doze STRING", "Get bib data from PDFs"
+  # method_option :path => :string
+  def doze(tt)
   	tt = "#{tt}"
-    tt = tt.to_s.split(',')
-    out = Textminer.search(doi: tt).links(true)
-    puts out
+    #tt = tt.to_s.split(',')
+    Dozedois.doze(path: tt)
   end
 end
 
-Tm.start(ARGV)
+Dz.start(ARGV)

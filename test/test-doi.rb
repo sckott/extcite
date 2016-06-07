@@ -5,38 +5,24 @@ if ENV['CI']=='true'
   SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
 
-require "textminer"
+require "dozedois"
 require 'fileutils'
 require "test/unit"
-require "oga"
 
-class TestResponse < Test::Unit::TestCase
+class TestContneg < Test::Unit::TestCase
 
   def setup
-    @doi = '10.5555/515151'
-    @doi2 = "10.3897/phytokeys.42.7604"
-    @xml = ["http://annalsofpsychoceramics.labs.crossref.org/fulltext/10.5555/515151.xml"]
+    @doi1 = "10.1016/j.dendro.2014.01.004"
+    @doi2 = '10.5555/515151'
+    @doi3 = "10.3897/phytokeys.42.7604"
   end
 
-  def test_search
-    assert_equal(Textminer::Response, Textminer.search(doi: @doi).class)
-    assert_equal(@doi, Textminer.search(doi: @doi).doi)
-    assert_equal(nil, Textminer.search(doi: @doi).member)
-    assert_equal(nil, Textminer.search(doi: @doi).facet)
+  def test_cont_neg1
+    res = Dozedois.cont_neg(ids: @doi1)
+
+    assert_equal(Array, res.class)
+    assert_equal(String, res[0].class)
+    assert_false(res[0].match(/article/).nil?)
   end
-
-  # def test_fetch_xml
-  #   res = Textminer.fetch()
-  #   assert_equal(HTTParty::Response, res[0].class)
-  #   assert_true(res[0].ok?)
-  #   assert_equal(String, res[0].body.class)
-  #   assert_equal("PhytoKeys", Oga.parse_xml(res[0].body).xpath('//journal-meta//journal-id').text)
-  # end
-
-  # def test_fetch_pdf
-  #   res = Textminer.fetch(@doi2, "pdf")
-  #   assert_equal(HTTParty::Response, res.class)
-  #   assert_true(res.ok?)
-  # end
 
 end

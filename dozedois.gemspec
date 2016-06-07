@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.name        = 'dozedois'
   s.version     = Dozedois::VERSION
   s.date        = '2016-06-07'
-  s.summary     = "Gets DOIS and generates citations for your papers"
+  s.summary     = "Citations from PDFs"
   s.description = "Gets DOIS and generates citations for your papers"
   s.authors     = "Scott Chamberlain"
   s.email       = 'myrmecocystus@gmail.com'

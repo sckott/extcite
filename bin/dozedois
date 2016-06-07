@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require "thor"
+
+class Tm < Thor
+  include Thor::Actions
+  require 'textminer'
+  require 'launchy'
+  require 'json'
+  require 'pp'
+
+  desc "links STRING", "Get links meant for text mining"
+  # method_option :doi => :string
+  def links(tt)
+  	tt = "#{tt}"
+    tt = tt.to_s.split(',')
+    out = Textminer.search(doi: tt).links(true)
+    puts out
+  end
+end
+
+Tm.start(ARGV)

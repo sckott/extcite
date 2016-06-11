@@ -38,12 +38,10 @@ dozedois.dois(path: 'xxx/')
 
 ### On the CLI
 
+All pdfs in the current directory:
+
 ```ruby
-dozedois .
+dozedois doze .
 ```
-
-## To do
-
-* xxx
 
 [changelog]: https://github.com/sckott/dozedois/blob/master/CHANGELOG.md

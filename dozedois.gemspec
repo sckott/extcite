@@ -6,7 +6,7 @@ require 'dozedois/version'
 Gem::Specification.new do |s|
   s.name        = 'dozedois'
   s.version     = Dozedois::VERSION
-  s.date        = '2016-06-07'
+  s.date        = '2016-06-17'
   s.summary     = "Citations from PDFs"
   s.description = "Gets DOIS and generates citations for your papers"
   s.authors     = "Scott Chamberlain"
@@ -30,4 +30,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'pdf-reader','~> 1.4'
   s.add_runtime_dependency 'oga', '~> 2.2'
   s.add_runtime_dependency 'serrano', '~> 0.2.2'
+  s.add_runtime_dependency 'bibtex-ruby', '~> 4.4'
 end

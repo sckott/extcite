@@ -13,3 +13,14 @@ def dir_files(x)
 		x + '/' + z
 	}
 end
+
+def make_paths(x)
+	path = Array(x)
+  if path.length == 1
+    if File.directory?(path[0])
+      # keep only files with .pdf extension
+      path = dir_files(path[0]).keep_if { |z| !!z.match(/.pdf/) }
+    end
+  end
+  return path
+end

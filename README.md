@@ -40,8 +40,14 @@ dozedois.dois(path: 'xxx/')
 
 All pdfs in the current directory:
 
-```ruby
+```shell
 dozedois doze .
+```
+
+Single paper
+
+```shell
+dozedois doze foo.pdf
 ```
 
 [changelog]: https://github.com/sckott/dozedois/blob/master/CHANGELOG.md

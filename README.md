@@ -15,6 +15,8 @@ cd dozedois
 rake install
 ```
 
+> if `rake install` fails, try `sudo rake install`. If that fails, open an issue with what `rake install --trace` gives you
+
 ## Examples
 
 ### Within Ruby

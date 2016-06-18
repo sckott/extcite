@@ -30,7 +30,6 @@ module Dozedois
   def self.doze(path:, file: "out.bib", output: "bib", iterate: true)
     if iterate
       path = make_paths(path)
-      out = []
       path.each do |x|
         ids = Dozedois.get_ids(txt: Dozedois.extract_text_one(x))
         if ids.length == 0

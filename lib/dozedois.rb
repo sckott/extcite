@@ -31,7 +31,30 @@ module Dozedois
     if iterate
       path = make_paths(path)
       path.each do |x|
-        ids = Dozedois.get_ids(txt: Dozedois.extract_text_one(x))
+
+        # try PDF metadata first
+        rr = PDF::Reader.new(x)
+        pdfmeta = rr.metadata
+        if !pdfmeta.nil?
+          xml = Oga.parse_xml(pdfmeta)
+          begin
+            tt = xml.xpath('//rdf:Description')
+            ss = tt.attr('dc:identifier')[0]
+            if ss.nil?
+              ids = nil
+            else
+              ids = ss.text.sub(/doi:/, '')
+            end
+          rescue
+            ids = nil
+          end
+        end
+
+        # if not found, try regexing for DOI
+        if ids.nil?
+          ids = Dozedois.get_ids(txt: Dozedois.extract_text_one(x))
+        end
+
         if ids.length == 0
           puts "no DOI found in " + x
         else
@@ -85,13 +108,17 @@ module Dozedois
   #   require 'dozedois'
   #   Dozedois.get_ids(txt: '10.1016/j.dendro.2014.01.004 adfasdf asd fas df asdfsd')
   def self.get_ids(txt:)
+    # see if there's
+
     return Array(txt).map { |z|
       # detect if is an arxiv paper
       if !z.match(/arxiv:[0-9]+\.[0-9A-Za-z]+/i).nil?
         # if so, return arxiv id for later extraction of arxiv citation via their API
         z = z.match(/arxiv:[0-9]+\.[0-9A-Za-z]+/i).to_s
       else
-        z = z.match("[0-9]+\\.[0-9]+/.+").to_s.gsub(/\s.+/, '')
+        doi_pattern = '(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![%"#? ])\\S)+)'
+        z = z.match(doi_pattern).to_s.gsub(/\s.+/, '')
+        # z = z.match("10\\.[0-9]+/.+").to_s.gsub(/\s.+/, '')
       end
       # clean up doi
       z = z.gsub(/\.$|\.;$|\.\]$|\.\}$|\.\)$/, '')

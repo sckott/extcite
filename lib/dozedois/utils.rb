@@ -24,3 +24,13 @@ def make_paths(x)
   end
   return path
 end
+
+def pdf_doi(x)
+  xml = Oga.parse_xml(x)
+  begin
+    tt = xml.xpath('//rdf:Description')
+    return tt.attr('dc:identifier')[0].text.sub(/doi:/, '')
+  rescue
+    return nil
+  end
+end

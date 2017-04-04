@@ -1,7 +1,4 @@
-require 'fileutils'
-require "test/unit"
-
-require File.expand_path('../../lib/dozedois', __FILE__)
+require 'test_helper'
 
 class TestContneg < Test::Unit::TestCase
 

@@ -1,11 +1,19 @@
 extcite
 =======
 
+[![gem version](https://img.shields.io/gem/v/serrano.svg)](https://rubygems.org/gems/serrano)
 [![Build Status](https://travis-ci.org/sckott/extcite.svg?branch=master)](https://travis-ci.org/sckott/extcite)
+[![codecov.io](http://codecov.io/github/sckott/extcite/coverage.svg?branch=master)](http://codecov.io/github/sckott/extcite?branch=master)
 
 __`extcite` gets DOIS and generates citations for your papers__
 
 ## Install
+
+### Release version
+
+```
+gem install extcite
+```
 
 ### Development version
 

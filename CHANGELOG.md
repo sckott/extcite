@@ -1,3 +1,7 @@
+## 0.1.0 (2017-04-06)
+
+* First version to Rubygems
+
 ## 0.0.9 (2016-06-17)
 
 * battle tested more, fixed a number of bugs

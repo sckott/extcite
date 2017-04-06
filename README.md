@@ -29,21 +29,29 @@ rake install
 
 ### Within Ruby
 
+```ruby
+require 'extcite'
+```
+
 #### Search
 
 A single paper
 
 ```ruby
-require 'extcite'
-# link to full text available
-Extcite.extract(path: 'xxx')
+require 'net/http'
+File.write("foo.pdf", Net::HTTP.get(URI.parse("https://scottchamberlain.info/pdfs/GuoEtal2015PlosOne.pdf")))
+Extcite.extract(path: 'foo.pdf')
 ```
+
+bib citation is written to a file given in `file` param
 
 Many papers at once
 
 ```ruby
-require 'extcite'
-Extcite.extract(path: 'xxx/')
+Dir.mkdir('bar')
+File.write("bar/foo1.pdf", Net::HTTP.get(URI.parse("https://scottchamberlain.info/pdfs/Chamberlain&Szocs2013F1000Research.pdf")))
+File.write("bar/foo2.pdf", Net::HTTP.get(URI.parse("https://scottchamberlain.info/pdfs/GuoEtal2015PlosOne.pdf")))
+Extcite.extract(path: 'bar')
 ```
 
 ### On the CLI

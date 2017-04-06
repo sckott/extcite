@@ -1,12 +1,12 @@
 require 'faraday'
 require 'serrano'
 require 'pdf-reader'
-require "dozedois/utils"
-require "dozedois/methods_array"
-require "dozedois/methods_string"
-require "dozedois/version"
+require "extcite/utils"
+require "extcite/methods_array"
+require "extcite/methods_string"
+require "extcite/version"
 
-module Dozedois
+module Extcite
   ##
   # Extract DOIs from one or more PDFs
   #
@@ -17,7 +17,7 @@ module Dozedois
   # Return: writes bib files to a .bibtex file
   #
   # @example
-  #   require 'dozedois'
+  #   require 'extcite'
   #   require 'faraday'
   #   # get a paper in pdf format
   #   path = '2068.pdf'
@@ -26,8 +26,8 @@ module Dozedois
   #   f.write(res.body)
   #   f.close()
   #   # extract doi from the pdf
-  #   Dozedois.doze(path: path)
-  def self.doze(path:, file: "out.bib", output: "bib", iterate: true)
+  #   Extcite.extract(path: path)
+  def self.extract(path:, file: "out.bib", output: "bib", iterate: true)
     if iterate
       path = make_paths(path)
       path.each do |x|
@@ -72,7 +72,7 @@ module Dozedois
 
         # if not found, try regexing for DOI
         if ids.nil?
-          ids = Dozedois.get_ids(txt: Dozedois.extract_text_one(x))
+          ids = Extcite.get_ids(txt: Extcite.extract_text_one(x))
         end
 
         if ids.length == 0
@@ -82,7 +82,7 @@ module Dozedois
             conn = Faraday.new(:url => 'http://export.arxiv.org/api/query?id_list=' + ids.gsub(/arxiv:/i, '')).get
             bibs = conn.body.make_bib_arxiv(ids.gsub(/arxiv:/i, ''))
           else
-            bibs = Dozedois.cont_neg(ids: ids)
+            bibs = Extcite.cont_neg(ids: ids)
           end
 
           # if an error or not found, skip
@@ -103,8 +103,8 @@ module Dozedois
         end
       end
     else
-      res = Dozedois.extract_dois(path: path)
-      bibs = Dozedois.cont_neg(ids: res)
+      res = Extcite.extract_dois(path: path)
+      bibs = Extcite.cont_neg(ids: res)
       bibs.write_bib(file)
       puts "bib data written to " + file
     end
@@ -116,7 +116,7 @@ module Dozedois
   # @param path [String] Path to a pdf file, or a folder of PDF files
   #
   # @example
-  #   require 'dozedois'
+  #   require 'extcite'
   #   require 'faraday'
   #   # get a paper in pdf format
   #   path = '2068.pdf'
@@ -125,9 +125,9 @@ module Dozedois
   #   f.write(res.body)
   #   f.close()
   #   # extract doi from the pdf
-  #   Dozedois.extract_dois(path: path)
+  #   Extcite.extract_dois(path: path)
   def self.extract_dois(path:)
-    txt = Dozedois.extract_text(path: path)
+    txt = Extcite.extract_text(path: path)
     return txt.map { |z| z.match("[0-9]+\\.[0-9]+/.+").to_s.gsub(/\s.+/, '') }
   end
 
@@ -139,8 +139,8 @@ module Dozedois
   # Return: Array of DOIs
   #
   # @example
-  #   require 'dozedois'
-  #   Dozedois.get_ids(txt: '10.1016/j.dendro.2014.01.004 adfasdf asd fas df asdfsd')
+  #   require 'extcite'
+  #   Extcite.get_ids(txt: '10.1016/j.dendro.2014.01.004 adfasdf asd fas df asdfsd')
   def self.get_ids(txt:)
     # see if there's
 
@@ -168,7 +168,7 @@ module Dozedois
   # This method is used internally within fetch to parse PDFs.
   #
   # @example
-  #   require 'dozedois'
+  #   require 'extcite'
   #   require 'faraday'
   #   # get a paper in pdf format
   #   path = '2068.pdf'
@@ -177,7 +177,7 @@ module Dozedois
   #   f.write(res.body)
   #   f.close()
   #   # extract doi from the pdf
-  #   Dozedois.extract_text(path: path)
+  #   Extcite.extract_text(path: path)
   def self.extract_text(path:)
     path = Array(path)
     if path.length == 1
@@ -203,8 +203,8 @@ module Dozedois
   # Return: an array of bib data
   #
   # @example
-  #   require 'dozedois'
-  #   Dozedois.cont_neg(ids: "10.1016/j.dendro.2014.01.004")
+  #   require 'extcite'
+  #   Extcite.cont_neg(ids: "10.1016/j.dendro.2014.01.004")
   def self.cont_neg(ids:)
     out = Serrano.content_negotiation(ids: ids)
     return out

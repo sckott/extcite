@@ -7,7 +7,7 @@ class TestContneg < Test::Unit::TestCase
   end
 
   def test_get_ids
-    res = Dozedois.get_ids(txt: @str)
+    res = Extcite.get_ids(txt: @str)
 
     assert_equal(String, res.class)
     assert_false(res.match(/10.1016\/j.dendro.2014.01.004/).nil?)

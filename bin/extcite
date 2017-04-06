@@ -4,16 +4,15 @@ require "thor"
 
 class Dz < Thor
   include Thor::Actions
-  require 'dozedois'
+  require 'extcite'
   require 'launchy'
   require 'pp'
 
-  desc "doze STRING", "Get bib data from PDFs"
+  desc "extract STRING", "Get bib data from PDFs"
   # method_option :path => :string
-  def doze(tt)
+  def extract(tt)
   	tt = "#{tt}"
-    #tt = tt.to_s.split(',')
-    Dozedois.doze(path: tt)
+    Extcite.extract(path: tt)
   end
 end
 

@@ -1,2 +1,2 @@
-require 'dozedois'
+require 'extcite'
 require 'test/unit'

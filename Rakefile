@@ -10,7 +10,7 @@ end
 desc "Run tests"
 task :default => :test
 
-desc "Build dozedois docs"
+desc "Build extcite docs"
 task :docs do
 	system "yardoc"
 end
@@ -25,17 +25,17 @@ task :clean do
   system "ls | grep [0-9].gem | xargs rm"
 end
 
-desc "Build dozedois"
+desc "Build extcite"
 task :build do
-	system "gem build dozedois.gemspec"
+	system "gem build extcite.gemspec"
 end
 
-desc "Install dozedois"
+desc "Install extcite"
 task :install => [:bundle, :build] do
-	system "gem install dozedois-#{Dozedois::VERSION}.gem"
+	system "gem install extcite-#{Extcite::VERSION}.gem"
 end
 
 desc "Release to Rubygems"
 task :release => :build do
-  system "gem push dozedois-#{Dozedois::VERSION}.gem"
+  system "gem push extcite-#{Extcite::VERSION}.gem"
 end

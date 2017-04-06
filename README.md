@@ -1,17 +1,17 @@
-dozedois
-========
+extcite
+=======
 
-[![Build Status](https://travis-ci.org/sckott/dozedois.svg?branch=master)](https://travis-ci.org/sckott/dozedois)
+[![Build Status](https://travis-ci.org/sckott/extcite.svg?branch=master)](https://travis-ci.org/sckott/extcite)
 
-__`dozedois` gets DOIS and generates citations for your papers__
+__`extcite` gets DOIS and generates citations for your papers__
 
 ## Install
 
 ### Development version
 
 ```
-git clone git@github.com:sckott/dozedois.git
-cd dozedois
+git clone git@github.com:sckott/extcite.git
+cd extcite
 rake install
 ```
 
@@ -26,16 +26,16 @@ rake install
 A single paper
 
 ```ruby
-require 'dozedois'
+require 'extcite'
 # link to full text available
-dozedois.doze(path: 'xxx')
+Extcite.doze(path: 'xxx')
 ```
 
 Many papers at once
 
 ```ruby
-require 'dozedois'
-dozedois.doze(path: 'xxx/')
+require 'extcite'
+Extcite.doze(path: 'xxx/')
 ```
 
 ### On the CLI
@@ -43,13 +43,13 @@ dozedois.doze(path: 'xxx/')
 All pdfs in the current directory:
 
 ```shell
-dozedois doze .
+extcite doze .
 ```
 
 Single paper
 
 ```shell
-dozedois doze foo.pdf
+extcite doze foo.pdf
 ```
 
-[changelog]: https://github.com/sckott/dozedois/blob/master/CHANGELOG.md
+[changelog]: https://github.com/sckott/extcite/blob/master/CHANGELOG.md

@@ -84,7 +84,7 @@ module Extcite
       if ids.length == 0
         puts "no DOI found in " + x
       else
-        if !ids.match(/arxiv/i).nil?
+        if !ids.match(/arxiv/i).nil? && ids.length < 200
           conn = Faraday.new(:url => 'http://export.arxiv.org/api/query?id_list=' + ids.gsub(/arxiv:/i, '')).get
           bibs = conn.body.make_bib_arxiv(ids.gsub(/arxiv:/i, ''))
         else
@@ -98,7 +98,7 @@ module Extcite
         end
 
         if !bibstest.nil?
-          if !bibstest.match(/error|not found/i).nil?
+          if !bibstest.match(/error|not found/i).nil? || !bibstest.match(/<\/html>/i).nil?
             puts "DOI found: " + ids + " ; but citation not found via content negotation - passing"
             # do something else?
           else

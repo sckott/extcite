@@ -1,5 +1,4 @@
 require_relative 'test_helper'
-require 'extcite'
 
 class TestContNeg < Test::Unit::TestCase
 

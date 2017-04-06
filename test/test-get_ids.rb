@@ -1,5 +1,4 @@
 require_relative 'test_helper'
-require 'extcite'
 
 class TestGetIds < Test::Unit::TestCase
 

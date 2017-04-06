@@ -28,14 +28,14 @@ A single paper
 ```ruby
 require 'extcite'
 # link to full text available
-Extcite.doze(path: 'xxx')
+Extcite.extract(path: 'xxx')
 ```
 
 Many papers at once
 
 ```ruby
 require 'extcite'
-Extcite.doze(path: 'xxx/')
+Extcite.extract(path: 'xxx/')
 ```
 
 ### On the CLI
@@ -43,13 +43,13 @@ Extcite.doze(path: 'xxx/')
 All pdfs in the current directory:
 
 ```shell
-extcite doze .
+extcite extract .
 ```
 
 Single paper
 
 ```shell
-extcite doze foo.pdf
+extcite extract foo.pdf
 ```
 
 [changelog]: https://github.com/sckott/extcite/blob/master/CHANGELOG.md

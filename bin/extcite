@@ -5,8 +5,6 @@ require "thor"
 class Dz < Thor
   include Thor::Actions
   require 'extcite'
-  require 'launchy'
-  require 'pp'
 
   desc "extract STRING", "Get bib data from PDFs"
   # method_option :path => :string

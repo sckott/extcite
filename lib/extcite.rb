@@ -99,16 +99,16 @@ module Extcite
 
         if !bibstest.nil?
           if !bibstest.match(/error|not found/i).nil?
-            raise "DOI found: " + ids + " ; but citation not found via content negotation - quitting"
+            puts "DOI found: " + ids + " ; but citation not found via content negotation - passing"
             # do something else?
+          else
+            if file.nil?
+              return bibs
+            else
+              puts "writing " + ids + " to " + file
+              bibs.write_bib(file)
+            end
           end
-        end
-
-        if file.nil?
-          return bibs
-        else
-          puts "writing " + ids + " to " + file
-          bibs.write_bib(file)
         end
       end
     end

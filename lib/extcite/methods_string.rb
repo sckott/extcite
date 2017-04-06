@@ -14,7 +14,7 @@ class String
 	def make_bib_arxiv(id)
 		# prep xml
 		xml = Oga.parse_xml(self)
-		author = xml.xpath('//author//name')[0].text.downcase.gsub(/\s|\./, '_')
+		# author = xml.xpath('//author//name')[0].text.downcase.gsub(/\s|\./, '_')
 		year = DateTime.strptime(xml.xpath('//updated')[0].text).year
 
 		# make bib citation

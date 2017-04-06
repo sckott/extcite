@@ -1,6 +1,6 @@
-require 'test_helper'
+require_relative 'test_helper'
 
-class TestContneg < Test::Unit::TestCase
+class TestGetIds < Test::Unit::TestCase
 
   def setup
     @str = '10.1016/j.dendro.2014.01.004 adfasdf asd fas df asdfsd'

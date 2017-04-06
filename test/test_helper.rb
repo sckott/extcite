@@ -1,2 +1,2 @@
-require 'extcite'
 require 'test/unit'
+require 'extcite'

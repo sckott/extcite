@@ -6,7 +6,7 @@ require 'extcite/version'
 Gem::Specification.new do |s|
   s.name        = 'extcite'
   s.version     = Extcite::VERSION
-  s.date        = '2017-04-03'
+  s.date        = '2017-04-06'
   s.summary     = "Citations from PDFs"
   s.description = "Gets DOIS and generates citations for your papers"
   s.authors     = "Scott Chamberlain"

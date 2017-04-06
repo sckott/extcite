@@ -1,3 +1,5 @@
+require "oga"
+
 def singlearray2hash(x)
   if x.length == 1 && x.class == Array
     return x[0]
@@ -25,9 +27,9 @@ def make_paths(x)
   end
 
   # check that files exist
-  path.each do |x|
-    if !File.exist?(x)
-      raise x + ' not found'
+  path.each do |z|
+    if !File.exist?(z)
+      raise z + ' not found'
     end
   end
 

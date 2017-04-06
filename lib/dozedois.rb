@@ -33,17 +33,37 @@ module Dozedois
       path.each do |x|
 
         # try PDF metadata first
+        ids = nil
         rr = PDF::Reader.new(x)
         pdfmeta = rr.metadata
         if !pdfmeta.nil?
           xml = Oga.parse_xml(pdfmeta)
           begin
             tt = xml.xpath('//rdf:Description')
+            # try dc:identifier attribute
             ss = tt.attr('dc:identifier')[0]
-            if ss.nil?
-              ids = nil
-            else
+            if !ss.nil?
               ids = ss.text.sub(/doi:/, '')
+            else
+              # try prism:doi node
+              pdoi = xml.xpath('//rdf:Description//prism:doi')
+              if pdoi.length == 1
+                ids = pdoi.text
+              else
+                # try pdf:WPS-ARTICLEDOI node
+                wpsdoi = xml.xpath('//rdf:Description//pdf:WPS-ARTICLEDOI')
+                if wpsdoi.length == 1
+                  ids = wpsdoi.text
+                else
+                  # try pdfx:WPS-ARTICLEDOI node
+                  pdfxwpsdoi = xml.xpath('//rdf:Description//pdfx:WPS-ARTICLEDOI')
+                  if pdfxwpsdoi.length == 1
+                    ids = pdfxwpsdoi.text
+                  else
+                    ids = nil
+                  end
+                end
+              end
             end
           rescue
             ids = nil
@@ -64,8 +84,22 @@ module Dozedois
           else
             bibs = Dozedois.cont_neg(ids: ids)
           end
-          bibs.write_bib(file)
+
+          # if an error or not found, skip
+          bibstest = nil
+          if bibs.class == Array
+            bibstest = bibs[0]
+          end
+
+          if !bibstest.nil?
+            if !bibstest.match(/error|not found/i).nil?
+              raise "DOI found: " + ids + " ; but citation not found via content negotation - quitting"
+              # do something else?
+            end
+          end
+
           puts "writing " + ids
+          bibs.write_bib(file)
         end
       end
     else
@@ -121,7 +155,7 @@ module Dozedois
         # z = z.match("10\\.[0-9]+/.+").to_s.gsub(/\s.+/, '')
       end
       # clean up doi
-      z = z.gsub(/\.$|\.;$|\.\]$|\.\}$|\.\)$/, '')
+      z = z.gsub(/\.$|\.;$|\.\]$|\.\}$|\.\)$|,$/, '')
       return z.gsub(/;$|\]$|\}$|\)$/, '')
     }[0]
   end

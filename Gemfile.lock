@@ -1,25 +1,25 @@
 PATH
   remote: .
   specs:
-    dozedois (0.0.9.1)
+    dozedois (0.0.9.2)
       bibtex-ruby (~> 4.4)
       faraday (~> 0.12.0.1)
       faraday_middleware (~> 0.11.0.1)
       launchy (~> 2.4, >= 2.4.3)
       oga (~> 2.2)
-      pdf-reader (~> 1.4)
-      serrano (~> 0.3.1)
+      pdf-reader (~> 2.0)
+      serrano (~> 0.3.6)
 
 GEM
   remote: https://rubygems.org/
   specs:
     Ascii85 (1.0.2)
-    addressable (2.5.0)
+    addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     afm (0.2.2)
     ansi (1.5.0)
     ast (2.3.0)
-    bibtex-ruby (4.4.0)
+    bibtex-ruby (4.4.3)
       latex-decode (~> 0.0)
     faraday (0.12.0.1)
       multipart-post (>= 1.2, < 3)
@@ -35,7 +35,7 @@ GEM
     oga (2.9)
       ast
       ruby-ll (~> 2.1)
-    pdf-reader (1.4.1)
+    pdf-reader (2.0.0)
       Ascii85 (~> 1.0.0)
       afm (~> 0.2.1)
       hashery (~> 2.0)
@@ -48,7 +48,7 @@ GEM
       ansi
       ast
     ruby-rc4 (0.1.5)
-    serrano (0.3.1)
+    serrano (0.3.6)
       faraday (~> 0.12.0.1)
       faraday_middleware (~> 0.11.0.1)
       multi_json (~> 1.12, >= 1.12.1)

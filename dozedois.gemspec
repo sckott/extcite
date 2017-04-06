@@ -27,8 +27,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'faraday', '~> 0.12.0.1'
   s.add_runtime_dependency 'faraday_middleware', '~> 0.11.0.1'
   s.add_runtime_dependency 'launchy', '~> 2.4', '>= 2.4.3'
-  s.add_runtime_dependency 'pdf-reader','~> 1.4'
+  s.add_runtime_dependency 'pdf-reader', '~> 2.0'
   s.add_runtime_dependency 'oga', '~> 2.2'
-  s.add_runtime_dependency 'serrano', '~> 0.3.1'
+  s.add_runtime_dependency 'serrano', '~> 0.3.6'
   s.add_runtime_dependency 'bibtex-ruby', '~> 4.4'
 end

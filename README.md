@@ -28,14 +28,14 @@ A single paper
 ```ruby
 require 'dozedois'
 # link to full text available
-dozedois.dois(path: 'xxx')
+dozedois.doze(path: 'xxx')
 ```
 
 Many papers at once
 
 ```ruby
 require 'dozedois'
-dozedois.dois(path: 'xxx/')
+dozedois.doze(path: 'xxx/')
 ```
 
 ### On the CLI

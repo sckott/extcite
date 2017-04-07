@@ -33,8 +33,6 @@ rake install
 require 'extcite'
 ```
 
-#### Search
-
 A single paper
 
 ```ruby

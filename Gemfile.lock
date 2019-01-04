@@ -16,7 +16,7 @@ GEM
     Ascii85 (1.0.2)
     afm (0.2.2)
     ansi (1.5.0)
-    ast (2.3.0)
+    ast (2.4.0)
     bibtex-ruby (4.4.3)
       latex-decode (~> 0.0)
     codecov (0.1.10)
@@ -34,7 +34,7 @@ GEM
       unicode (~> 0.4)
     multi_json (1.12.1)
     multipart-post (2.0.0)
-    oga (2.9)
+    oga (2.15)
       ast
       ruby-ll (~> 2.1)
     pdf-reader (2.0.0)

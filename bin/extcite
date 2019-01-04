@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "thor"
+require "parallel"
 
 class Dz < Thor
   include Thor::Actions
@@ -8,9 +9,33 @@ class Dz < Thor
 
   desc "extract STRING", "Get bib data from PDFs"
   # method_option :path => :string
-  def extract(tt)
-  	tt = "#{tt}"
-    Extcite.extract(path: tt)
+  def extract(*tt)
+  	# tt = "#{tt}"
+    if tt.length == 1
+        Extcite.extract(path: tt)
+    else
+        tt.map{ |z| Extcite.extract(path: z ) }
+    end
+  end
+
+
+  desc "dois STRING", "Get dois from PDFs"
+  # method_option :path => :string
+  option :parallel, :type => :boolean, :default => false
+  def dois(*tt)
+    # tt = "#{tt}"
+    if tt.length == 1
+        # puts Extcite.extract_dois(path: tt) || tt % " not found"
+        # puts Extcite.extract(path: tt) || tt % " not found"
+        puts Extcite.extract_from_metadata(path: tt) || tt % " not found"
+    else
+        if options[:parallel]
+            Parallel.map(tt, in_processes: 4) { |e| puts Extcite.extract_from_metadata(path: e) || e % " not found" };
+        else
+            # tt.map{ |z| puts Extcite.extract_dois(path: z ) || z % " not found" }
+            tt.map{ |z| puts Extcite.extract_from_metadata(path: z ) || z % " not found" }
+        end
+    end
   end
 end
 

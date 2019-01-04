@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'faraday', '~> 0.12.0.1'
   s.add_runtime_dependency 'faraday_middleware', '~> 0.11.0.1'
   s.add_runtime_dependency 'thor', '~> 0.19.4'
+  s.add_runtime_dependency 'parallel', '~> 1.12', '>= 1.12.1'
   s.add_runtime_dependency 'oga', '~> 2.2'
   s.add_runtime_dependency 'serrano', '~> 0.3.6'
   s.add_runtime_dependency 'bibtex-ruby', '~> 4.4'

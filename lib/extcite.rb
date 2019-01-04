@@ -43,7 +43,7 @@ module Extcite
       rr = PDF::Reader.new(x)
       pdfmeta = rr.metadata
       if !pdfmeta.nil?
-        xml = Oga.parse_xml(pdfmeta)
+        xml = Oga.parse_xml(pdfmeta);
         begin
           tt = xml.xpath('//rdf:Description')
           # try dc:identifier attribute
@@ -115,6 +115,74 @@ module Extcite
   end
 
   ##
+  # Try to extract DOIs from one or more PDF metadata sections
+  #
+  # @param path [String] Path to a pdf file, or a folder of PDF files
+  #
+  # Return: DOI string
+  #
+  # @example
+  #   require 'extcite'
+  #   require 'faraday'
+  #   # get a paper in pdf format
+  #   path = '2068.pdf'
+  #   res = Faraday.new(:url => "https://peerj.com/articles/2068.pdf").get;
+  #   f = File.new(path, "wb");
+  #   f.write(res.body)
+  #   f.close()
+  #   # extract doi from the pdf
+  #   Extcite.extract_from_metadata(path: path)
+  def self.extract_from_metadata(path:)
+    path = make_paths(path)
+    path.each do |x|
+      # try PDF metadata first
+      ids = nil
+      rr = PDF::Reader.new(x)
+      pdfmeta = rr.metadata
+      if !pdfmeta.nil?
+        xml = Oga.parse_xml(pdfmeta);
+        begin
+          tt = xml.xpath('//rdf:Description')
+          # try dc:identifier attribute
+          ss = tt.attr('dc:identifier')[0]
+          if !ss.nil?
+            ids = ss.text.sub(/doi:/, '')
+          else
+            # try prism:doi node
+            pdoi = xml.xpath('//rdf:Description//prism:doi')
+            if pdoi.length == 1
+              ids = pdoi.text
+            else
+              # try pdf:WPS-ARTICLEDOI node
+              wpsdoi = xml.xpath('//rdf:Description//pdf:WPS-ARTICLEDOI')
+              if wpsdoi.length == 1
+                ids = wpsdoi.text
+              else
+                # try pdfx:WPS-ARTICLEDOI node
+                pdfxwpsdoi = xml.xpath('//rdf:Description//pdfx:WPS-ARTICLEDOI')
+                if pdfxwpsdoi.length == 1
+                  ids = pdfxwpsdoi.text
+                else
+                  ids = nil
+                end
+              end
+            end
+          end
+        rescue
+          ids = nil
+        end
+      end
+
+      # if not found, try regexing for DOI
+      if ids.nil?
+        ids = Extcite.get_ids(txt: Extcite.extract_text_one(x))
+      end
+
+      return ids
+    end
+  end
+
+  ##
   # Extract DOIs from one or more PDFs after extracting text
   #
   # @param path [String] Path to a pdf file, or a folder of PDF files
@@ -132,7 +200,8 @@ module Extcite
   #   Extcite.extract_dois(path: path)
   def self.extract_dois(path:)
     txt = Extcite.extract_text(path: path)
-    return txt.map { |z| z.match("[0-9]+\\.[0-9]+/.+").to_s.gsub(/\s.+/, '') }
+    # return txt.map { |z| z.match("[0-9]+\\.[0-9]+/.+").to_s.gsub(/\s.+/, '') }
+    return Extcite.get_ids(txt: txt)
   end
 
   ##
@@ -193,8 +262,14 @@ module Extcite
 
     out = []
     path.each do |x|
-      rr = PDF::Reader.new(x)
-      out << rr.pages.map { |page| page.text }.join("\n")
+      begin
+        rr = PDF::Reader.new(x)
+        txt = rr.pages.map { |page| page.text }.join("\n")
+      rescue Exception => e
+        warn e
+        txt = ""
+      end
+      out << txt
     end
     return out
   end

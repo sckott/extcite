@@ -21,9 +21,9 @@ class TestExtract < Test::Unit::TestCase
     assert_equal(Array, res.class)
     assert_equal(1, res.length)
     assert_equal(String, res[0].class)
-    assert_false(res[0].match(/Ethan White/).nil?)
-    assert_false(res[0].match(/Ecology/).nil?)
-    assert_false(res[0].match(/Some thoughts on best publishing practices/).nil?)
+    assert_true(res[0].match(/Ethan White/).nil?)
+    assert_true(res[0].match(/Ecology/).nil?)
+    assert_true(res[0].match(/Some thoughts on best publishing practices/).nil?)
   end
 
 end

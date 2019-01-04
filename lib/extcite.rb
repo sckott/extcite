@@ -279,7 +279,7 @@ module Extcite
   #
   # @param ids [Array[String]] One or more DOIs in an array
   #
-  # Return: an array of bib data
+  # Return: an string of bib data
   #
   # @example
   #   require 'extcite'

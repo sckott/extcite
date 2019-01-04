@@ -34,3 +34,6 @@ build/
 .rvmrc
 
 cache/
+
+scratch.rb
+

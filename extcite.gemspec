@@ -32,6 +32,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'parallel', '~> 1.12', '>= 1.12.1'
   s.add_runtime_dependency 'oga', '~> 2.2'
   s.add_runtime_dependency 'serrano', '~> 0.3.6'
-  s.add_runtime_dependency 'bibtex-ruby', '~> 4.4'
+  s.add_runtime_dependency 'bibtex-ruby', '>= 4.4', '< 6.0'
   s.add_runtime_dependency 'pdf-reader', '~> 2.0'
 end

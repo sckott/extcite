@@ -45,7 +45,7 @@ GEM
       ruby-rc4
       ttfunk
     power_assert (1.1.4)
-    rake (12.3.2)
+    rake (12.3.3)
     ruby-ll (2.1.2)
       ansi
       ast

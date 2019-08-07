@@ -28,9 +28,9 @@ module Extcite
   #   require 'faraday'
   #   # get a paper in pdf format
   #   path = '2068.pdf'
-  #   res = Faraday.new(:url => "https://peerj.com/articles/2068.pdf").get
-  #   f = File.new(path, "wb")
-  #   f.write(res.body)
+  #   res = Faraday.new(:url => "https://peerj.com/articles/2068.pdf").get;
+  #   f = File.new(path, "wb");
+  #   f.write(res.body);
   #   f.close()
   #   # extract doi from the pdf
   #   Extcite.extract(path: path)
@@ -40,7 +40,7 @@ module Extcite
     path.each do |x|
       # try PDF metadata first
       ids = nil
-      rr = PDF::Reader.new(x)
+      rr = PDF::Reader.new(x);
       pdfmeta = rr.metadata
       if !pdfmeta.nil?
         xml = Oga.parse_xml(pdfmeta);
@@ -95,6 +95,8 @@ module Extcite
         bibstest = nil
         if bibs.class == Array
           bibstest = bibs[0]
+        else
+          bibstest = bibs
         end
 
         if !bibstest.nil?
@@ -103,7 +105,7 @@ module Extcite
             # do something else?
           else
             if file.nil?
-              return bibs
+              return bibstest
             else
               puts "writing " + ids + " to " + file
               bibs.write_bib(file)

@@ -6,7 +6,7 @@ require 'extcite/version'
 Gem::Specification.new do |s|
   s.name        = 'extcite'
   s.version     = Extcite::VERSION
-  s.date        = '2017-04-06'
+  s.date        = '2019-08-07'
   s.summary     = "Citations from PDFs"
   s.description = "Gets DOIS and generates citations for your papers"
   s.authors     = "Scott Chamberlain"
@@ -20,18 +20,18 @@ Gem::Specification.new do |s|
   s.bindir      = 'bin'
   s.executables = ['extcite']
 
-  s.add_development_dependency 'bundler', '>= 1.14.6', '~> 2.0'
-  s.add_development_dependency 'rake', '~> 12.0', '>= 12.0.0'
-  s.add_development_dependency 'test-unit', '~> 3.2', '>= 3.2.1'
+  s.add_development_dependency 'bundler', '~> 2.0', '>= 2.0.2'
+  s.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
+  s.add_development_dependency 'test-unit', '~> 3.3', '>= 3.3.3'
   s.add_development_dependency 'simplecov', '~> 0.17.0'
-  s.add_development_dependency 'codecov', '~> 0.1.10'
+  s.add_development_dependency 'codecov', '~> 0.1.14'
 
-  s.add_runtime_dependency 'faraday', '~> 0.12.0.1'
-  s.add_runtime_dependency 'faraday_middleware', '~> 0.11.0.1'
-  s.add_runtime_dependency 'thor', '~> 0.19.4'
-  s.add_runtime_dependency 'parallel', '~> 1.12', '>= 1.12.1'
-  s.add_runtime_dependency 'oga', '~> 2.2'
-  s.add_runtime_dependency 'serrano', '~> 0.3.6'
-  s.add_runtime_dependency 'bibtex-ruby', '>= 4.4', '< 6.0'
-  s.add_runtime_dependency 'pdf-reader', '~> 2.0'
+  s.add_runtime_dependency 'faraday', '~> 0.15.4'
+  s.add_runtime_dependency 'faraday_middleware', '~> 0.13.1'
+  s.add_runtime_dependency 'thor', '~> 0.20.3'
+  s.add_runtime_dependency 'parallel', '~> 1.17'
+  s.add_runtime_dependency 'oga', '~> 2.15'
+  s.add_runtime_dependency 'serrano', '~> 0.5.0'
+  s.add_runtime_dependency 'bibtex-ruby', '~> 5.0'
+  s.add_runtime_dependency 'pdf-reader', '~> 2.2', '>= 2.2.1'
 end

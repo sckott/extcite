@@ -8,33 +8,60 @@ class Dz < Thor
   require 'extcite'
 
   desc "extract STRING", "Get bib data from PDFs"
-  # method_option :path => :string
+  long_desc <<-LONGDESC
+    `extcite extract` accepts one or more file paths to PDFs
+
+    # get a pdf, then extract citation
+    \x5$ wget https://peerj.com/articles/2068.pdf
+    \x5$ extcite extract peerj-2068.pdf
+
+    writing 10.7717/peerj.2068 to out.bib
+
+    \x5$ cat out.bib
+
+    @article{Daar_2016,
+    \x5  doi = {10.7717/peerj.2068},
+    \x5  url = {https://doi.org/10.7717%2Fpeerj.2068},
+    \x5  year = 2016,
+    \x5  month = {jun},
+    \x5  publisher = {{PeerJ}},
+    \x5  volume = {4},
+    \x5  pages = {e2068},
+    \x5  author = {Marwan Daar and Hugh R. Wilson},
+    \x5  title = {A closer look at four-dot masking of a foveated target},
+    \x5  journal = {{PeerJ}}
+    \x5}
+  LONGDESC
   def extract(*tt)
-  	# tt = "#{tt}"
     if tt.length == 1
-        Extcite.extract(path: tt)
+      Extcite.extract(path: tt)
     else
-        tt.map{ |z| Extcite.extract(path: z ) }
+      tt.map{ |z| Extcite.extract(path: z ) }
     end
   end
 
 
   desc "dois STRING", "Get dois from PDFs"
+  long_desc <<-LONGDESC
+    `extcite dois` accepts one or more file paths to PDFs
+
+    # get a pdf, then extract citation
+    \x5$ wget https://peerj.com/articles/2068.pdf
+    \x5$ extcite dois peerj-2068.pdf
+
+    10.7717/peerj.2068
+  LONGDESC
   # method_option :path => :string
   option :parallel, :type => :boolean, :default => false
   def dois(*tt)
-    # tt = "#{tt}"
     if tt.length == 1
-        # puts Extcite.extract_dois(path: tt) || tt % " not found"
-        # puts Extcite.extract(path: tt) || tt % " not found"
-        puts Extcite.extract_from_metadata(path: tt) || tt % " not found"
+      puts Extcite.extract_from_metadata(path: tt) || tt % " not found"
     else
-        if options[:parallel]
-            Parallel.map(tt, in_processes: 4) { |e| puts Extcite.extract_from_metadata(path: e) || e % " not found" };
-        else
-            # tt.map{ |z| puts Extcite.extract_dois(path: z ) || z % " not found" }
-            tt.map{ |z| puts Extcite.extract_from_metadata(path: z ) || z % " not found" }
-        end
+      if options[:parallel]
+        Parallel.map(tt, in_processes: 4) { |e| puts Extcite.extract_from_metadata(path: e) || e % " not found" };
+      else
+        tt.map{ |z| puts Extcite.extract_from_metadata(path: z ) || z % " not found" }
+      end
     end
   end
 end

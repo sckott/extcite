@@ -55,7 +55,7 @@ GEM
       faraday_middleware (>= 0.12.2, < 0.14.0)
       multi_json (~> 1.13, >= 1.13.1)
       thor (~> 0.20.0)
-    simplecov (0.17.0)
+    simplecov (0.17.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)

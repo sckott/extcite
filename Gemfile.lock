@@ -45,7 +45,7 @@ GEM
       ruby-rc4
       ttfunk
     power_assert (1.1.4)
-    rake (12.3.3)
+    rake (13.0.0)
     ruby-ll (2.1.2)
       ansi
       ast
@@ -73,7 +73,7 @@ DEPENDENCIES
   bundler (~> 2.0, >= 2.0.2)
   codecov (~> 0.1.14)
   extcite!
-  rake (~> 12.3, >= 12.3.3)
+  rake (~> 13.0, >= 12.3.3)
   simplecov (~> 0.17.0)
   test-unit (~> 3.3, >= 3.3.3)
 

@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.executables = ['extcite']
 
   s.add_development_dependency 'bundler', '~> 2.0', '>= 2.0.2'
-  s.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
+  s.add_development_dependency 'rake', '>= 12.3.3', '~> 13.0'
   s.add_development_dependency 'test-unit', '~> 3.3', '>= 3.3.3'
   s.add_development_dependency 'simplecov', '~> 0.17.0'
   s.add_development_dependency 'codecov', '~> 0.1.14'

@@ -1,3 +1,7 @@
+## 0.2.2 (2019-11-22)
+
+* update dependencies
+
 ## 0.2.0 (2019-08-07)
 
 * new method `extract_from_metadata` to try to extract DOIs from one or more PDF metadat sections

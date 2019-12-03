@@ -5,7 +5,7 @@ PATH
       bibtex-ruby (~> 5.0, >= 5.0.1)
       faraday (>= 0.15, < 0.18)
       faraday_middleware (>= 0.12.2, < 0.14.0)
-      oga (~> 2.15)
+      oga (>= 2.15, < 4.0)
       parallel (~> 1.19)
       pdf-reader (~> 2.4)
       serrano (~> 0.5.2)
@@ -34,7 +34,7 @@ GEM
     latex-decode (0.3.1)
     multi_json (1.14.1)
     multipart-post (2.1.1)
-    oga (2.16)
+    oga (3.0)
       ast
       ruby-ll (~> 2.1)
     parallel (1.19.1)

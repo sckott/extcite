@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'faraday_middleware', '>= 0.12.2', '< 0.14.0'
   s.add_runtime_dependency 'thor', '~> 0.20.3'
   s.add_runtime_dependency 'parallel', '~> 1.19'
-  s.add_runtime_dependency 'oga', '~> 2.15'
+  s.add_runtime_dependency 'oga', '>= 2.15', '< 4.0'
   s.add_runtime_dependency 'serrano', '~> 0.5.2'
   s.add_runtime_dependency 'bibtex-ruby', '~> 5.0', '>= 5.0.1'
   s.add_runtime_dependency 'pdf-reader', '~> 2.4'

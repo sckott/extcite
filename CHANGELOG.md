@@ -1,3 +1,8 @@
+## 0.3.0 (2020-04-07)
+
+* bump faraday and faraday_middleware versions (#29) (#30)
+* bump bibtex-ruby version (#56) (#57)
+
 ## 0.2.2 (2019-11-22)
 
 * update dependencies

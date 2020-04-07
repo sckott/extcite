@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    extcite (0.2.2)
+    extcite (0.3.0)
       bibtex-ruby (~> 5.0, >= 5.0.1)
       faraday (>= 0.15, < 1.1)
       faraday_middleware (>= 0.12.2, < 0.14.0)
@@ -62,7 +62,7 @@ GEM
     test-unit (3.3.4)
       power_assert
     thor (0.20.3)
-    ttfunk (1.5.1)
+    ttfunk (1.6.2.1)
     url (0.3.2)
 
 PLATFORMS
@@ -77,4 +77,4 @@ DEPENDENCIES
   test-unit (~> 3.3, >= 3.3.4)
 
 BUNDLED WITH
-   2.0.2
+   2.1.4

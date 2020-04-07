@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = "Gets DOIS and generates citations for your papers"
   s.authors     = "Scott Chamberlain"
   s.email       = 'myrmecocystus@gmail.com'
-  s.homepage    = 'http://github.com/sckott/extcite'
+  s.homepage    = 'https://github.com/sckott/extcite'
   s.licenses    = 'MIT'
 
   s.files = `git ls-files -z`.split("\x0").reject {|f| f.match(%r{^(test|spec|features)/}) }

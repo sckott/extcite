@@ -35,4 +35,13 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'serrano', '>= 0.5.2', '< 0.7.0'
   s.add_runtime_dependency 'bibtex-ruby', '~> 5.0', '>= 5.0.1'
   s.add_runtime_dependency 'pdf-reader', '~> 2.4'
+
+  s.metadata = {
+    'homepage_uri' => 'https://github.com/sckott/extcite',
+    'changelog_uri' =>
+      "https://github.com/sckott/extcite/releases/tag/v#{s.version}",
+    'source_code_uri' => 'https://github.com/sckott/extcite',
+    'bug_tracker_uri' => 'https://github.com/sckott/extcite/issues',
+    'documentation_uri' => 'https://xenodochial-stonebraker-ad2732.netlify.app'
+  }
 end

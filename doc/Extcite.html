@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Extcite
+  
+    &mdash; Documentation by YARD 0.9.24
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Extcite";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (E)</a> &raquo;
+    
+    
+    <span class="title">Extcite</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Extcite
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/extcite.rb<span class="defines">,<br />
+  lib/extcite/version.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.4.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cont_neg-class_method" title="cont_neg (class method)">.<strong>cont_neg</strong>(ids:)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get citation(s) using Crossref content negotation.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#extract-class_method" title="extract (class method)">.<strong>extract</strong>(path:, file: &quot;out.bib&quot;, output: &quot;bib&quot;)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Extract DOIs from one or more PDFs.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#extract_dois-class_method" title="extract_dois (class method)">.<strong>extract_dois</strong>(path:)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Extract DOIs from one or more PDFs after extracting text.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#extract_from_metadata-class_method" title="extract_from_metadata (class method)">.<strong>extract_from_metadata</strong>(path:)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Try to extract DOIs from one or more PDF metadata sections.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#extract_text-class_method" title="extract_text (class method)">.<strong>extract_text</strong>(path:)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Extract text from a pdf, or many pdfs.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_ids-class_method" title="get_ids (class method)">.<strong>get_ids</strong>(txt:)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get DOIs from a String or Array of String&#39;s.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="cont_neg-class_method">
+  
+    .<strong>cont_neg</strong>(ids:)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get citation(s) using Crossref content negotation</p>
+
+<p>Return: an string of bib data</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>extcite</span><span class='tstring_end'>&#39;</span></span>
+<span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_cont_neg'>cont_neg</span><span class='lparen'>(</span><span class='label'>ids:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>10.1016/j.dendro.2014.01.004</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>ids</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span>[<span class='object_link'><a href="String.html" title="String (class)">String</a></span>]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>One or more DOIs in an array</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+296
+297
+298
+299</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 296</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_cont_neg'>cont_neg</span><span class='lparen'>(</span><span class='label'>ids:</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='const'>Serrano</span><span class='period'>.</span><span class='id identifier rubyid_content_negotiation'>content_negotiation</span><span class='lparen'>(</span><span class='label'>ids:</span> <span class='id identifier rubyid_ids'>ids</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_out'>out</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extract-class_method">
+  
+    .<strong>extract</strong>(path:, file: &quot;out.bib&quot;, output: &quot;bib&quot;)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Extract DOIs from one or more PDFs</p>
+
+<p>Return: writes bib files to a .bib file or an array if file is nil</p>
+
+<pre class="code ruby"><code class="ruby">When writing to a file, `extract` by default appends to the end
+of the file so you can build up your bibtex file with your
+citations
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>extcite</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>faraday</span><span class='tstring_end'>&#39;</span></span><span class='comment'># get a paper in pdf format
+</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2068.pdf</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://peerj.com/articles/2068.pdf</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='semicolon'>;</span>
+<span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='semicolon'>;</span>
+<span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span><span class='semicolon'>;</span>
+<span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comment'># extract doi from the pdf
+</span>
+<span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract'>extract</span><span class='lparen'>(</span><span class='label'>path:</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract'>extract</span><span class='lparen'>(</span><span class='label'>path:</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='label'>file:</span> <span class='kw'>nil</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Path to a pdf file, or a folder of PDF files</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>file</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;out.bib&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>File name to write data to - or nil to stdout</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>output</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;bib&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Typeo of output. only bibtex for now</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extract'>extract</span><span class='lparen'>(</span><span class='label'>path:</span><span class='comma'>,</span> <span class='label'>file:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>out.bib</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>output:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bib</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_make_paths'><span class='object_link'><a href="top-level-namespace.html#make_paths-instance_method" title="#make_paths (method)">make_paths</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+    <span class='comment'># try PDF metadata first
+</span>    <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='kw'>nil</span>
+    <span class='id identifier rubyid_rr'>rr</span> <span class='op'>=</span> <span class='const'>PDF</span><span class='op'>::</span><span class='const'>Reader</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span><span class='semicolon'>;</span>
+    <span class='id identifier rubyid_pdfmeta'>pdfmeta</span> <span class='op'>=</span> <span class='id identifier rubyid_rr'>rr</span><span class='period'>.</span><span class='id identifier rubyid_metadata'>metadata</span>
+    <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_pdfmeta'>pdfmeta</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='id identifier rubyid_xml'>xml</span> <span class='op'>=</span> <span class='const'>Oga</span><span class='period'>.</span><span class='id identifier rubyid_parse_xml'>parse_xml</span><span class='lparen'>(</span><span class='id identifier rubyid_pdfmeta'>pdfmeta</span><span class='rparen'>)</span><span class='semicolon'>;</span>
+      <span class='kw'>begin</span>
+        <span class='id identifier rubyid_tt'>tt</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>//rdf:Description</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>        <span class='comment'># try dc:identifier attribute
+</span>
+        <span class='id identifier rubyid_ss'>ss</span> <span class='op'>=</span> <span class='id identifier rubyid_tt'>tt</span><span class='period'>.</span><span class='id identifier rubyid_attr'>attr</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dc:identifier</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+        <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+          <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>doi:</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+        <span class='kw'>else</span>
+          <span class='comment'># try prism:doi node
+</span>          <span class='id identifier rubyid_pdoi'>pdoi</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>//rdf:Description//prism:doi</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+          <span class='kw'>if</span> <span class='id identifier rubyid_pdoi'>pdoi</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
+            <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_pdoi'>pdoi</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+          <span class='kw'>else</span>
+            <span class='comment'># try pdf:WPS-ARTICLEDOI node
+</span>            <span class='id identifier rubyid_wpsdoi'>wpsdoi</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>//rdf:Description//pdf:WPS-ARTICLEDOI</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+            <span class='kw'>if</span> <span class='id identifier rubyid_wpsdoi'>wpsdoi</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
+              <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_wpsdoi'>wpsdoi</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+            <span class='kw'>else</span>
+              <span class='comment'># try pdfx:WPS-ARTICLEDOI node
+</span>              <span class='id identifier rubyid_pdfxwpsdoi'>pdfxwpsdoi</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>//rdf:Description//pdfx:WPS-ARTICLEDOI</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+              <span class='kw'>if</span> <span class='id identifier rubyid_pdfxwpsdoi'>pdfxwpsdoi</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
+                <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_pdfxwpsdoi'>pdfxwpsdoi</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+              <span class='kw'>else</span>
+                <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='kw'>nil</span>
+              <span class='kw'>end</span>
+            <span class='kw'>end</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+      <span class='kw'>rescue</span>
+        <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='kw'>nil</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># if not found, try regexing for DOI
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_ids'><span class='object_link'><a href="#get_ids-class_method" title="Extcite.get_ids (method)">get_ids</a></span></span><span class='lparen'>(</span><span class='label'>txt:</span> <span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract_text_one'>extract_text_one</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>no DOI found in </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_x'>x</span>
+    <span class='kw'>else</span>
+      <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>arxiv</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&lt;</span> <span class='int'>200</span>
+        <span class='id identifier rubyid_conn'>conn</span> <span class='op'>=</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://export.arxiv.org/api/query?id_list=</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>arxiv:</span><span class='regexp_end'>/i</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span>
+        <span class='id identifier rubyid_bibs'>bibs</span> <span class='op'>=</span> <span class='id identifier rubyid_conn'>conn</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_make_bib_arxiv'>make_bib_arxiv</span><span class='lparen'>(</span><span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>arxiv:</span><span class='regexp_end'>/i</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_bibs'>bibs</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_cont_neg'><span class='object_link'><a href="#cont_neg-class_method" title="Extcite.cont_neg (method)">cont_neg</a></span></span><span class='lparen'>(</span><span class='label'>ids:</span> <span class='id identifier rubyid_ids'>ids</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># if an error or not found, skip
+</span>      <span class='id identifier rubyid_bibstest'>bibstest</span> <span class='op'>=</span> <span class='kw'>nil</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_bibs'>bibs</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></span>
+        <span class='id identifier rubyid_bibstest'>bibstest</span> <span class='op'>=</span> <span class='id identifier rubyid_bibs'>bibs</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_bibstest'>bibstest</span> <span class='op'>=</span> <span class='id identifier rubyid_bibs'>bibs</span>
+      <span class='kw'>end</span>
+
+      <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_bibstest'>bibstest</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_bibstest'>bibstest</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>error|not found</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='op'>!</span><span class='id identifier rubyid_bibstest'>bibstest</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>&lt;\/html&gt;</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+          <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DOI found: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_ids'>ids</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> ; but citation not found via content negotation - passing</span><span class='tstring_end'>&quot;</span></span>          <span class='comment'># do something else?
+</span>
+        <span class='kw'>else</span>
+          <span class='kw'>if</span> <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+            <span class='kw'>return</span> <span class='id identifier rubyid_bibstest'>bibstest</span>
+          <span class='kw'>else</span>
+            <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>writing </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_ids'>ids</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> to </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_file'>file</span>
+            <span class='id identifier rubyid_bibs'>bibs</span><span class='period'>.</span><span class='id identifier rubyid_write_bib'>write_bib</span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extract_dois-class_method">
+  
+    .<strong>extract_dois</strong>(path:)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Extract DOIs from one or more PDFs after extracting text</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>extcite</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>faraday</span><span class='tstring_end'>&#39;</span></span><span class='comment'># get a paper in pdf format
+</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2068.pdf</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://peerj.com/articles/2068.pdf</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span>
+<span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comment'># extract doi from the pdf
+</span>
+<span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract_dois'>extract_dois</span><span class='lparen'>(</span><span class='label'>path:</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Path to a pdf file, or a folder of PDF files</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+210
+211
+212
+213
+214</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 210</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extract_dois'>extract_dois</span><span class='lparen'>(</span><span class='label'>path:</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_txt'>txt</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract_text'><span class='object_link'><a href="#extract_text-class_method" title="Extcite.extract_text (method)">extract_text</a></span></span><span class='lparen'>(</span><span class='label'>path:</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>  <span class='comment'># return txt.map { |z| z.match(&quot;[0-9]+\\.[0-9]+/.+&quot;).to_s.gsub(/\s.+/, &#39;&#39;) }
+</span>
+  <span class='kw'>return</span> <span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_ids'><span class='object_link'><a href="#get_ids-class_method" title="Extcite.get_ids (method)">get_ids</a></span></span><span class='lparen'>(</span><span class='label'>txt:</span> <span class='id identifier rubyid_txt'>txt</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extract_from_metadata-class_method">
+  
+    .<strong>extract_from_metadata</strong>(path:)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Try to extract DOIs from one or more PDF metadata sections</p>
+
+<p>Return: DOI string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>extcite</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>faraday</span><span class='tstring_end'>&#39;</span></span><span class='comment'># get a paper in pdf format
+</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2068.pdf</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://peerj.com/articles/2068.pdf</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='semicolon'>;</span>
+<span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='semicolon'>;</span>
+<span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comment'># extract doi from the pdf
+</span>
+<span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract_from_metadata'>extract_from_metadata</span><span class='lparen'>(</span><span class='label'>path:</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Path to a pdf file, or a folder of PDF files</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extract_from_metadata'>extract_from_metadata</span><span class='lparen'>(</span><span class='label'>path:</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_make_paths'><span class='object_link'><a href="top-level-namespace.html#make_paths-instance_method" title="#make_paths (method)">make_paths</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+    <span class='comment'># try PDF metadata first
+</span>    <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='kw'>nil</span>
+    <span class='id identifier rubyid_rr'>rr</span> <span class='op'>=</span> <span class='const'>PDF</span><span class='op'>::</span><span class='const'>Reader</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_pdfmeta'>pdfmeta</span> <span class='op'>=</span> <span class='id identifier rubyid_rr'>rr</span><span class='period'>.</span><span class='id identifier rubyid_metadata'>metadata</span>
+    <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_pdfmeta'>pdfmeta</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='kw'>begin</span>
+        <span class='id identifier rubyid_xml'>xml</span> <span class='op'>=</span> <span class='const'>Oga</span><span class='period'>.</span><span class='id identifier rubyid_parse_xml'>parse_xml</span><span class='lparen'>(</span><span class='id identifier rubyid_pdfmeta'>pdfmeta</span><span class='rparen'>)</span><span class='semicolon'>;</span>
+      <span class='kw'>rescue</span> <span class='const'>Exception</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+        <span class='id identifier rubyid_xml'>xml</span> <span class='op'>=</span> <span class='kw'>nil</span>
+      <span class='kw'>end</span>
+
+      <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='kw'>begin</span>
+          <span class='id identifier rubyid_tt'>tt</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>//rdf:Description</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>          <span class='comment'># try dc:identifier attribute
+</span>
+          <span class='id identifier rubyid_ss'>ss</span> <span class='op'>=</span> <span class='id identifier rubyid_tt'>tt</span><span class='period'>.</span><span class='id identifier rubyid_attr'>attr</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dc:identifier</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+          <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+            <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>doi:</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+          <span class='kw'>else</span>
+            <span class='comment'># try prism:doi node
+</span>            <span class='id identifier rubyid_pdoi'>pdoi</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>//rdf:Description//prism:doi</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+            <span class='kw'>if</span> <span class='id identifier rubyid_pdoi'>pdoi</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
+              <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_pdoi'>pdoi</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+            <span class='kw'>else</span>
+              <span class='comment'># try pdf:WPS-ARTICLEDOI node
+</span>              <span class='id identifier rubyid_wpsdoi'>wpsdoi</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>//rdf:Description//pdf:WPS-ARTICLEDOI</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+              <span class='kw'>if</span> <span class='id identifier rubyid_wpsdoi'>wpsdoi</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
+                <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_wpsdoi'>wpsdoi</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+              <span class='kw'>else</span>
+                <span class='comment'># try pdfx:WPS-ARTICLEDOI node
+</span>                <span class='id identifier rubyid_pdfxwpsdoi'>pdfxwpsdoi</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>//rdf:Description//pdfx:WPS-ARTICLEDOI</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+                <span class='kw'>if</span> <span class='id identifier rubyid_pdfxwpsdoi'>pdfxwpsdoi</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
+                  <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_pdfxwpsdoi'>pdfxwpsdoi</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
+                <span class='kw'>else</span>
+                  <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='kw'>nil</span>
+                <span class='kw'>end</span>
+              <span class='kw'>end</span>
+            <span class='kw'>end</span>
+          <span class='kw'>end</span>
+        <span class='kw'>rescue</span>
+          <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='kw'>nil</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># if not found, try regexing for DOI
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_ids'><span class='object_link'><a href="#get_ids-class_method" title="Extcite.get_ids (method)">get_ids</a></span></span><span class='lparen'>(</span><span class='label'>txt:</span> <span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract_text_one'>extract_text_one</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>return</span> <span class='id identifier rubyid_ids'>ids</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extract_text-class_method">
+  
+    .<strong>extract_text</strong>(path:)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Extract text from a pdf, or many pdfs</p>
+
+<p>This method is used internally within fetch to parse PDFs.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>extcite</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>faraday</span><span class='tstring_end'>&#39;</span></span><span class='comment'># get a paper in pdf format
+</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2068.pdf</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://peerj.com/articles/2068.pdf</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span>
+<span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comment'># extract doi from the pdf
+</span>
+<span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract_text'>extract_text</span><span class='lparen'>(</span><span class='label'>path:</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Path to a pdf file, or a folder of PDF files</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 263</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extract_text'>extract_text</span><span class='lparen'>(</span><span class='label'>path:</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
+    <span class='kw'>if</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_directory?'>directory?</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>      <span class='comment'># keep only files with .pdf extension
+</span>
+      <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_dir_files'><span class='object_link'><a href="top-level-namespace.html#dir_files-instance_method" title="#dir_files (method)">dir_files</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_keep_if'>keep_if</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_z'>z</span><span class='op'>|</span> <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_z'>z</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>.pdf</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+    <span class='kw'>begin</span>
+      <span class='id identifier rubyid_rr'>rr</span> <span class='op'>=</span> <span class='const'>PDF</span><span class='op'>::</span><span class='const'>Reader</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_txt'>txt</span> <span class='op'>=</span> <span class='id identifier rubyid_rr'>rr</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_page'>page</span><span class='op'>|</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>Exception</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+      <span class='id identifier rubyid_warn'>warn</span> <span class='id identifier rubyid_e'>e</span>
+      <span class='id identifier rubyid_txt'>txt</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_out'>out</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_txt'>txt</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_out'>out</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_ids-class_method">
+  
+    .<strong>get_ids</strong>(txt:)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get DOIs from a String or Array of String&#39;s</p>
+
+<p>Return: Array of DOIs</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>extcite</span><span class='tstring_end'>&#39;</span></span>
+<span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_ids'>get_ids</span><span class='lparen'>(</span><span class='label'>txt:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>10.1016/j.dendro.2014.01.004 adfasdf asd fas df asdfsd</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>txt</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>String or Array of String&#39;s</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 226</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_get_ids'>get_ids</span><span class='lparen'>(</span><span class='label'>txt:</span><span class='rparen'>)</span>
+  <span class='comment'># see if there&#39;s
+</span>
+  <span class='kw'>return</span> <span class='const'><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_txt'>txt</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_z'>z</span><span class='op'>|</span>
+    <span class='comment'># detect if is an arxiv paper
+</span>    <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_z'>z</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>arxiv:[0-9]+\.[0-9A-Za-z]+</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>      <span class='comment'># if so, return arxiv id for later extraction of arxiv citation via their API
+</span>
+      <span class='id identifier rubyid_z'>z</span> <span class='op'>=</span> <span class='id identifier rubyid_z'>z</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>arxiv:[0-9]+\.[0-9A-Za-z]+</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_doi_pattern'>doi_pattern</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![%&quot;#? ])\\S)+)</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_z'>z</span> <span class='op'>=</span> <span class='id identifier rubyid_z'>z</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_doi_pattern'>doi_pattern</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s.+</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>      <span class='comment'># z = z.match(&quot;10\\.[0-9]+/.+&quot;).to_s.gsub(/\s.+/, &#39;&#39;)
+</span>
+    <span class='kw'>end</span>    <span class='comment'># clean up doi
+</span>
+    <span class='id identifier rubyid_z'>z</span> <span class='op'>=</span> <span class='id identifier rubyid_z'>z</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\.$|\.;$|\.\]$|\.\}$|\.\)$|,$</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_z'>z</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>;$|\]$|\}$|\)$</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Wed Apr 15 15:40:24 2020 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.24 (ruby-2.7.1).
+</div>
+
+    </div>
+  </body>
+</html>

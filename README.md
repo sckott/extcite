@@ -5,7 +5,7 @@ extcite
 [![Build Status](https://travis-ci.org/sckott/extcite.svg?branch=master)](https://travis-ci.org/sckott/extcite)
 [![codecov.io](http://codecov.io/github/sckott/extcite/coverage.svg?branch=master)](http://codecov.io/github/sckott/extcite?branch=master)
 
-__`extcite` gets DOIS and generates citations for your papers__
+__`extcite` gets DOIS and generates citations for papers__
 
 ## Install
 

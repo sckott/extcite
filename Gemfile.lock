@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    extcite (0.3.0)
+    extcite (0.4.0)
       bibtex-ruby (~> 5.0, >= 5.0.1)
       faraday (>= 0.15, < 1.1)
       faraday_middleware (>= 0.12.2, < 1.1.0)
@@ -52,7 +52,7 @@ GEM
     ruby-rc4 (0.1.5)
     serrano (0.6.0)
       faraday (>= 0.15, < 1.0)
-      faraday_middleware (>= 0.12.2, < 0.15.0)
+      faraday_middleware (~> 0.14.0)
       multi_json (~> 1.13, >= 1.13.1)
       thor (>= 0.20, < 1.1)
     simplecov (0.18.5)

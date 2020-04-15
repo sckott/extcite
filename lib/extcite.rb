@@ -7,7 +7,7 @@ require "extcite/version"
 require 'serrano'
 require 'pdf-reader'
 require 'faraday'
-
+require 'timeout'
 
 
 module Extcite
@@ -142,36 +142,43 @@ module Extcite
       rr = PDF::Reader.new(x)
       pdfmeta = rr.metadata
       if !pdfmeta.nil?
-        xml = Oga.parse_xml(pdfmeta);
         begin
-          tt = xml.xpath('//rdf:Description')
-          # try dc:identifier attribute
-          ss = tt.attr('dc:identifier')[0]
-          if !ss.nil?
-            ids = ss.text.sub(/doi:/, '')
-          else
-            # try prism:doi node
-            pdoi = xml.xpath('//rdf:Description//prism:doi')
-            if pdoi.length == 1
-              ids = pdoi.text
+          xml = Oga.parse_xml(pdfmeta);
+        rescue Exception => e
+          xml = nil
+        end
+
+        if !xml.nil?
+          begin
+            tt = xml.xpath('//rdf:Description')
+            # try dc:identifier attribute
+            ss = tt.attr('dc:identifier')[0]
+            if !ss.nil?
+              ids = ss.text.sub(/doi:/, '')
             else
-              # try pdf:WPS-ARTICLEDOI node
-              wpsdoi = xml.xpath('//rdf:Description//pdf:WPS-ARTICLEDOI')
-              if wpsdoi.length == 1
-                ids = wpsdoi.text
+              # try prism:doi node
+              pdoi = xml.xpath('//rdf:Description//prism:doi')
+              if pdoi.length == 1
+                ids = pdoi.text
               else
-                # try pdfx:WPS-ARTICLEDOI node
-                pdfxwpsdoi = xml.xpath('//rdf:Description//pdfx:WPS-ARTICLEDOI')
-                if pdfxwpsdoi.length == 1
-                  ids = pdfxwpsdoi.text
+                # try pdf:WPS-ARTICLEDOI node
+                wpsdoi = xml.xpath('//rdf:Description//pdf:WPS-ARTICLEDOI')
+                if wpsdoi.length == 1
+                  ids = wpsdoi.text
                 else
-                  ids = nil
+                  # try pdfx:WPS-ARTICLEDOI node
+                  pdfxwpsdoi = xml.xpath('//rdf:Description//pdfx:WPS-ARTICLEDOI')
+                  if pdfxwpsdoi.length == 1
+                    ids = pdfxwpsdoi.text
+                  else
+                    ids = nil
+                  end
                 end
               end
             end
+          rescue
+            ids = nil
           end
-        rescue
-          ids = nil
         end
       end
 
@@ -295,7 +302,15 @@ module Extcite
 
   def self.extract_text_one(x)
     rr = PDF::Reader.new(x)
-    return rr.pages.map { |page| page.text }.join("\n")
+    return rr.pages.map { |page|
+      begin
+        Timeout.timeout(1) do 
+          page.text
+        end
+      rescue Timeout::Error
+        next
+      end
+    }.join("\n")
   end
 
 end

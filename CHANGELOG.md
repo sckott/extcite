@@ -1,3 +1,12 @@
+## 0.4.0 (2020-04-15)
+
+* bump serrano version (#55)
+* bump bibtex-ruby version (#58)
+* bump thor version (#59)
+* bump faraday_middleware version (#60)
+* updated `extract_text_one` method to use `Timeout.timeout` while looping through pages of a PDF to extract text - sometimes `pdf-reader` hangs, so only allow 1 second max before skipping to the next page
+* add error catching to `extract_from_metadata` method for xml parsing of PDF metadata; sometimes PDF metadata is full of non-parseable XML
+
 ## 0.3.0 (2020-04-07)
 
 * bump faraday and faraday_middleware versions (#29) (#30)

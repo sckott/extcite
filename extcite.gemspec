@@ -27,8 +27,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'codecov', '~> 0.1.16'
 
   s.add_runtime_dependency 'timeout', '~> 0.1.0'
-  s.add_runtime_dependency 'faraday', '>= 0.15', '< 1.1'
-  s.add_runtime_dependency 'faraday_middleware', '>= 0.12.2', '< 1.1.0'
+  s.add_runtime_dependency 'faraday', '~> 1.0', '>= 1.0.1'
+  s.add_runtime_dependency 'faraday_middleware', '~> 1.0'
   s.add_runtime_dependency 'thor', '>= 0.20.3', '< 1.1.0'
   s.add_runtime_dependency 'parallel', '~> 1.19'
   s.add_runtime_dependency 'oga', '>= 2.15', '< 4.0'

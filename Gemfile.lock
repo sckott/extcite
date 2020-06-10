@@ -45,7 +45,7 @@ GEM
       hashery (~> 2.0)
       ruby-rc4
       ttfunk
-    power_assert (1.1.7)
+    power_assert (1.2.0)
     rake (13.0.1)
     ruby-ll (2.1.2)
       ansi
@@ -60,7 +60,7 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
     simplecov-html (0.12.2)
-    test-unit (3.3.5)
+    test-unit (3.3.6)
       power_assert
     thor (1.0.1)
     timeout (0.1.0)

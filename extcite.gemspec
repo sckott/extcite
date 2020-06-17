@@ -27,12 +27,12 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'codecov', '~> 0.1.16'
 
   s.add_runtime_dependency 'timeout', '~> 0.1.0'
-  s.add_runtime_dependency 'faraday', '>= 0.15', '< 1.0'
-  s.add_runtime_dependency 'faraday_middleware', '>= 0.12.2', '< 0.15.0'
+  s.add_runtime_dependency 'faraday', '~> 1.0', '>= 1.0.1'
+  s.add_runtime_dependency 'faraday_middleware', '~> 1.0'
   s.add_runtime_dependency 'thor', '>= 0.20.3', '< 1.1.0'
   s.add_runtime_dependency 'parallel', '~> 1.19'
   s.add_runtime_dependency 'oga', '>= 2.15', '< 4.0'
-  s.add_runtime_dependency 'serrano', '>= 0.5.2', '< 0.7.0'
+  s.add_runtime_dependency 'serrano', '~> 0.6.2'
   s.add_runtime_dependency 'bibtex-ruby', '~> 5.0', '>= 5.0.1'
   s.add_runtime_dependency 'pdf-reader', '~> 2.4'
 

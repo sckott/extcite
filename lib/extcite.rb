@@ -171,7 +171,13 @@ module Extcite
                   if pdfxwpsdoi.length == 1
                     ids = pdfxwpsdoi.text
                   else
-                    ids = nil
+                    # try dc:source
+                    dc_source = xml.xpath('//dc:source')
+                    if dc_source.length == 1
+                      ids = dc_source.text.match(/10\..+/).to_s
+                    else
+                      ids = nil
+                    end
                   end
                 end
               end

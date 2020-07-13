@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    extcite (0.4.0)
+    extcite (0.4.1)
       bibtex-ruby (~> 5.0, >= 5.0.1)
       faraday (~> 1.0, >= 1.0.1)
       faraday_middleware (~> 1.0)
@@ -33,7 +33,7 @@ GEM
     hashery (2.1.2)
     json (2.3.0)
     latex-decode (0.3.1)
-    multi_json (1.14.1)
+    multi_json (1.15.0)
     multipart-post (2.1.1)
     oga (3.2)
       ast

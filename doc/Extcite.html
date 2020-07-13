@@ -97,7 +97,7 @@
         <dt id="VERSION-constant" class="">VERSION =
           
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.4.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.4.1</span><span class='tstring_end'>&quot;</span></span></pre></dd>
       
     </dl>
   
@@ -191,7 +191,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#extract_from_metadata-class_method" title="extract_from_metadata (class method)">.<strong>extract_from_metadata</strong>(path:)  &#x21d2; Object </a>
+      <a href="#extract_from_metadata-class_method" title="extract_from_metadata (class method)">.<strong>extract_from_metadata</strong>(path:, try_regex: true)  &#x21d2; Object </a>
     
 
     
@@ -326,13 +326,13 @@
       <pre class="lines">
 
 
-296
-297
-298
-299</pre>
+305
+306
+307
+308</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 296</span>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 305</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_cont_neg'>cont_neg</span><span class='lparen'>(</span><span class='label'>ids:</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='const'>Serrano</span><span class='period'>.</span><span class='id identifier rubyid_content_negotiation'>content_negotiation</span><span class='lparen'>(</span><span class='label'>ids:</span> <span class='id identifier rubyid_ids'>ids</span><span class='rparen'>)</span>
@@ -682,14 +682,14 @@ citations
       <pre class="lines">
 
 
-210
-211
-212
-213
-214</pre>
+219
+220
+221
+222
+223</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 210</span>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 219</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extract_dois'>extract_dois</span><span class='lparen'>(</span><span class='label'>path:</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_txt'>txt</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract_text'><span class='object_link'><a href="#extract_text-class_method" title="Extcite.extract_text (method)">extract_text</a></span></span><span class='lparen'>(</span><span class='label'>path:</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>  <span class='comment'># return txt.map { |z| z.match(&quot;[0-9]+\\.[0-9]+/.+&quot;).to_s.gsub(/\s.+/, &#39;&#39;) }
@@ -704,7 +704,7 @@ citations
       <div class="method_details ">
   <h3 class="signature " id="extract_from_metadata-class_method">
   
-    .<strong>extract_from_metadata</strong>(path:)  &#x21d2; <tt>Object</tt> 
+    .<strong>extract_from_metadata</strong>(path:, try_regex: true)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -752,7 +752,25 @@ citations
       
         &mdash;
         <div class='inline'>
-<p>Path to a pdf file, or a folder of PDF files</p>
+<p>Path to a pdf file, or a folder of PDF files. required</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>try_regex</span>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If no PDF metadata, try extracting using regex on the text. Uses `Extcite.extract_text_one` to extract text, then  `Extcite.get_ids` to extract a DOI if any found</p>
 </div>
       
     </li>
@@ -766,9 +784,6 @@ citations
       <pre class="lines">
 
 
-137
-138
-139
 140
 141
 142
@@ -821,17 +836,26 @@ citations
 189
 190
 191
-192</pre>
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 137</span>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 140</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extract_from_metadata'>extract_from_metadata</span><span class='lparen'>(</span><span class='label'>path:</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extract_from_metadata'>extract_from_metadata</span><span class='lparen'>(</span><span class='label'>path:</span><span class='comma'>,</span> <span class='label'>try_regex:</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_make_paths'><span class='object_link'><a href="top-level-namespace.html#make_paths-instance_method" title="#make_paths (method)">make_paths</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
     <span class='comment'># try PDF metadata first
 </span>    <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='kw'>nil</span>
-    <span class='id identifier rubyid_rr'>rr</span> <span class='op'>=</span> <span class='const'>PDF</span><span class='op'>::</span><span class='const'>Reader</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_rr'>rr</span> <span class='op'>=</span> <span class='const'>PDF</span><span class='op'>::</span><span class='const'>Reader</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span><span class='semicolon'>;</span>
     <span class='id identifier rubyid_pdfmeta'>pdfmeta</span> <span class='op'>=</span> <span class='id identifier rubyid_rr'>rr</span><span class='period'>.</span><span class='id identifier rubyid_metadata'>metadata</span>
     <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_pdfmeta'>pdfmeta</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
       <span class='kw'>begin</span>
@@ -863,7 +887,13 @@ citations
                 <span class='kw'>if</span> <span class='id identifier rubyid_pdfxwpsdoi'>pdfxwpsdoi</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
                   <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_pdfxwpsdoi'>pdfxwpsdoi</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>
                 <span class='kw'>else</span>
-                  <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='kw'>nil</span>
+                  <span class='comment'># try dc:source
+</span>                  <span class='id identifier rubyid_dc_source'>dc_source</span> <span class='op'>=</span> <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>//dc:source</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+                  <span class='kw'>if</span> <span class='id identifier rubyid_dc_source'>dc_source</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
+                    <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_dc_source'>dc_source</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>10\..+</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+                  <span class='kw'>else</span>
+                    <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='kw'>nil</span>
+                  <span class='kw'>end</span>
                 <span class='kw'>end</span>
               <span class='kw'>end</span>
             <span class='kw'>end</span>
@@ -875,7 +905,7 @@ citations
     <span class='kw'>end</span>
 
     <span class='comment'># if not found, try regexing for DOI
-</span>    <span class='kw'>if</span> <span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_try_regex'>try_regex</span>
       <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_ids'><span class='object_link'><a href="#get_ids-class_method" title="Extcite.get_ids (method)">get_ids</a></span></span><span class='lparen'>(</span><span class='label'>txt:</span> <span class='const'><span class='object_link'><a href="" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract_text_one'>extract_text_one</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
@@ -952,15 +982,6 @@ citations
       <pre class="lines">
 
 
-263
-264
-265
-266
-267
-268
-269
-270
-271
 272
 273
 274
@@ -973,10 +994,19 @@ citations
 281
 282
 283
-284</pre>
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 263</span>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 272</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extract_text'>extract_text</span><span class='lparen'>(</span><span class='label'>path:</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
@@ -1062,15 +1092,6 @@ citations
       <pre class="lines">
 
 
-226
-227
-228
-229
-230
-231
-232
-233
-234
 235
 236
 237
@@ -1079,10 +1100,19 @@ citations
 240
 241
 242
-243</pre>
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 226</span>
+      <pre class="code"><span class="info file"># File 'lib/extcite.rb', line 235</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_get_ids'>get_ids</span><span class='lparen'>(</span><span class='label'>txt:</span><span class='rparen'>)</span>
   <span class='comment'># see if there&#39;s
@@ -1112,7 +1142,7 @@ citations
 </div>
 
       <div id="footer">
-  Generated on Wed Apr 15 16:00:31 2020 by
+  Generated on Sat Jul 11 10:09:44 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.7.1).
 </div>

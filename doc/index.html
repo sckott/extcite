@@ -57,79 +57,71 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1 id="extcite">extcite</h1>
+      <div id="content"><div id='filecontents'><h1>extcite</h1>
 
-<p><a href="https://rubygems.org/gems/extcite"><img src="https://img.shields.io/gem/v/extcite.svg" alt="gem version" /></a>
-<a href="https://travis-ci.org/sckott/extcite"><img src="https://travis-ci.org/sckott/extcite.svg?branch=master" alt="Build Status" /></a>
-<a href="http://codecov.io/github/sckott/extcite?branch=master"><img src="http://codecov.io/github/sckott/extcite/coverage.svg?branch=master" alt="codecov.io" /></a></p>
+<p><a href="https://rubygems.org/gems/extcite"><img src="https://img.shields.io/gem/v/extcite.svg" alt="gem version"></a>
+<img src="https://github.com/sckott/extcite/workflows/Ruby/badge.svg" alt="Ruby">
+<a href="http://codecov.io/github/sckott/extcite?branch=master"><img src="http://codecov.io/github/sckott/extcite/coverage.svg?branch=master" alt="codecov.io"></a></p>
 
 <p><strong><code>extcite</code> gets DOIS and generates citations for papers</strong></p>
 
-<h2 id="install">Install</h2>
+<h2>Install</h2>
 
-<h3 id="release-version">Release version</h3>
+<h3>Release version</h3>
 
-<p><code>
-gem install extcite
-</code></p>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_extcite'>extcite</span>
+</code></pre>
 
-<h3 id="development-version">Development version</h3>
+<h3>Development version</h3>
 
-<p><code>
-git clone git@github.com:sckott/extcite.git
-cd extcite
-rake install
-</code></p>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_git'>git</span> <span class='id identifier rubyid_clone'>clone</span> <span class='id identifier rubyid_git'>git</span><span class='ivar'>@github</span><span class='period'>.</span><span class='id identifier rubyid_com'>com</span><span class='symbol'>:sckott</span><span class='op'>/</span><span class='id identifier rubyid_extcite'>extcite</span><span class='period'>.</span><span class='id identifier rubyid_git'>git</span>
+<span class='id identifier rubyid_cd'>cd</span> <span class='id identifier rubyid_extcite'>extcite</span>
+<span class='id identifier rubyid_rake'>rake</span> <span class='id identifier rubyid_install'>install</span>
+</code></pre>
 
 <blockquote>
-  <p>if <code>rake install</code> fails, try <code>sudo rake install</code>. If that fails, open an issue with what <code>rake install --trace</code> gives you</p>
+<p>if <code>rake install</code> fails, try <code>sudo rake install</code>. If that fails, open an issue with what <code>rake install --trace</code> gives you</p>
 </blockquote>
 
-<h2 id="examples">Examples</h2>
+<h2>Examples</h2>
 
-<h3 id="within-ruby">Within Ruby</h3>
+<h3>Within Ruby</h3>
 
-<p><code>ruby
-require 'extcite'
-</code></p>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>extcite</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
 
 <p>A single paper</p>
 
-<p><code>ruby
-require 'net/http'
-File.write("foo.pdf", Net::HTTP.get(URI.parse("https://scottchamberlain.info/pdfs/GuoEtal2015PlosOne.pdf")))
-Extcite.extract(path: 'foo.pdf')
-</code></p>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>net/http</span><span class='tstring_end'>&#39;</span></span>
+<span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foo.pdf</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'>URI</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://scottchamberlain.info/pdfs/GuoEtal2015PlosOne.pdf</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="Extcite.html" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract'><span class='object_link'><a href="Extcite.html#extract-class_method" title="Extcite.extract (method)">extract</a></span></span><span class='lparen'>(</span><span class='label'>path:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>foo.pdf</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</code></pre>
 
 <p>bib citation is written to a file given in <code>file</code> param</p>
 
 <p>Many papers at once</p>
 
-<p><code>ruby
-Dir.mkdir('bar')
-File.write("bar/foo1.pdf", Net::HTTP.get(URI.parse("https://scottchamberlain.info/pdfs/Chamberlain&amp;Szocs2013F1000Research.pdf")))
-File.write("bar/foo2.pdf", Net::HTTP.get(URI.parse("https://scottchamberlain.info/pdfs/GuoEtal2015PlosOne.pdf")))
-Extcite.extract(path: 'bar')
-</code></p>
+<pre class="code ruby"><code class="ruby"><span class='const'>Dir</span><span class='period'>.</span><span class='id identifier rubyid_mkdir'>mkdir</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>bar</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bar/foo1.pdf</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'>URI</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://scottchamberlain.info/pdfs/Chamberlain&amp;Szocs2013F1000Research.pdf</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bar/foo2.pdf</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'>URI</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://scottchamberlain.info/pdfs/GuoEtal2015PlosOne.pdf</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="Extcite.html" title="Extcite (module)">Extcite</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extract'><span class='object_link'><a href="Extcite.html#extract-class_method" title="Extcite.extract (method)">extract</a></span></span><span class='lparen'>(</span><span class='label'>path:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>bar</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</code></pre>
 
-<h3 id="on-the-cli">On the CLI</h3>
+<h3>On the CLI</h3>
 
 <p>All pdfs in the current directory:</p>
 
-<p><code>shell
-extcite extract .
-</code></p>
+<pre class="code shell"><code class="shell">extcite extract .
+</code></pre>
 
 <p>Single paper</p>
 
-<p><code>shell
-extcite extract foo.pdf
-</code></p>
-
+<pre class="code shell"><code class="shell">extcite extract foo.pdf
+</code></pre>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Apr 15 16:00:30 2020 by
+  Generated on Sat Jul 11 10:09:44 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.7.1).
 </div>

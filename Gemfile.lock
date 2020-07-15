@@ -21,7 +21,7 @@ GEM
     ast (2.4.1)
     bibtex-ruby (5.1.4)
       latex-decode (~> 0.0)
-    codecov (0.2.0)
+    codecov (0.2.1)
       colorize
       json
       simplecov

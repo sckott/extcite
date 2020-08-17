@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bundler', '~> 2.0', '>= 2.0.2'
   s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.1'
   s.add_development_dependency 'test-unit', '~> 3.3', '>= 3.3.4'
-  s.add_development_dependency 'simplecov', '~> 0.18.0'
+  s.add_development_dependency 'simplecov', '~> 0.19.0'
   s.add_development_dependency 'codecov', '~> 0.2.0'
 
   s.add_runtime_dependency 'timeout', '~> 0.1.0'

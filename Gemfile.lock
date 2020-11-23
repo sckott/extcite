@@ -40,7 +40,7 @@ GEM
     oga (3.3)
       ast
       ruby-ll (~> 2.1)
-    parallel (1.20.0)
+    parallel (1.20.1)
     pdf-reader (2.4.1)
       Ascii85 (~> 1.0.0)
       afm (~> 0.2.1)

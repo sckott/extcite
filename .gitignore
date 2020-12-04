@@ -35,5 +35,6 @@ build/
 cache/
 
 scratch.rb
-
 notes.rb
+
+Gemfile.lock

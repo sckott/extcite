@@ -9,7 +9,7 @@ gem 'thor', '>= 0.20.3', '< 1.1.0'
 gem 'parallel', '~> 1.19'
 gem 'oga', '>= 2.15', '< 4.0'
 gem 'serrano', '>= 0.6.2', '< 1.1.0'
-gem 'bibtex-ruby', '~> 5.0', '>= 5.0.1'
+gem 'bibtex-ruby', '~> 6.0'
 gem 'pdf-reader', '~> 2.4'
 
 gemspec

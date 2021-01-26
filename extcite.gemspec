@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.1'
   s.add_development_dependency 'test-unit', '~> 3.3', '>= 3.3.4'
   s.add_development_dependency 'simplecov', '~> 0.20.0'
-  s.add_development_dependency 'codecov', '~> 0.2.0'
+  s.add_development_dependency 'codecov', '~> 0.4.0'
 
   s.metadata = {
     'homepage_uri' => 'https://github.com/sckott/extcite',

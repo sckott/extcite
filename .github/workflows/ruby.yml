@@ -25,7 +25,9 @@ jobs:
         bundler-cache: true
     - name: Install dependencies
       run: |
-        gem install serrano
+        gem install serrano rexml
         bundle install
     - name: Run tests
-      run: bundle exec rake test TESTOPTS="-v"
+      run: |
+        bundle exec rake install
+        bundle exec rake test TESTOPTS="-v"

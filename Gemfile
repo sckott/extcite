@@ -2,14 +2,14 @@
 
 source 'https://rubygems.org'
 
-gem 'timeout', '~> 0.1.0'
-gem 'faraday', '~> 1.0', '>= 1.0.1'
-gem 'faraday_middleware', '~> 1.0'
-gem 'thor', '>= 0.20.3', '< 1.2.0'
-gem 'parallel', '~> 1.19'
-gem 'oga', '>= 2.15', '< 4.0'
-gem 'serrano', '>= 0.6.2', '< 1.1.0'
-gem 'bibtex-ruby', '~> 5.0', '>= 5.0.1'
-gem 'pdf-reader', '~> 2.4'
+gem 'timeout', '~> 0.2.0'
+gem 'faraday', '~> 1.8'
+gem 'faraday_middleware', '~> 1.2'
+gem 'thor', '~> 1.1'
+gem 'parallel', '~> 1.21'
+gem 'oga', '~> 3.3'
+gem 'serrano', '~> 1.0'
+gem 'bibtex-ruby', '~> 6.0'
+gem 'pdf-reader', '~> 2.5'
 
 gemspec

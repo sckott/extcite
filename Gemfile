@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'timeout', '~> 0.3.0'
+gem 'timeout', '~> 0.4.0'
 gem 'faraday', '~> 1.8'
 gem 'faraday_middleware', '~> 1.2'
 gem 'thor', '~> 1.1'
